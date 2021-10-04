@@ -7,6 +7,25 @@ jobs:
     env: BADGE=linux
   - os: osx
     env: BADGE=osx
+  - os: windows
+    language: bash
+    install:
+      - choco install -y r --version 3.6.2
+      - choco install -y rtools --version 3.5.0.4
+      - "url=$(curl https://miktex.org/download | sed -n 's/.*href=.\\(.*x64.exe\\).*/https:\\/\\/miktex.org\\1/p' | head -1)"
+      - if ! [ -f $HOME/AppData/Local/Temp/chocolatey/miktex.exe ]; then
+        curl -Lo $HOME/AppData/Local/Temp/chocolatey/miktex.exe $url;
+        fi
+      - curl -Lo oledlg.dll https://github.com/caiohamamura/flightplanning-R/releases/download/v0.0.0/oledlg.dll;
+      - $HOME/AppData/Local/Temp/chocolatey/miktex.exe --unattended --auto-install=yes 
+      - "export PATH=/c/Program\\ Files/MiKTeX\\ 2.9/miktex/bin/x64:$PATH"
+      - choco install -y pandoc
+      - "export PATH=/c/Program\\ Files/R/R-3.6.2/bin/x64:/c/Rtools/bin:/c/Rtools/mingw_64/bin:$PATH"
+      - mkdir -p ${HOME}/Documents/R/win-library/3.6
+      - export R_LIBS_USER=${HOME}/Documents/R/win-library/3.6
+      - echo 'options(repos = c(CRAN = "https://cloud.r-project.org"))' > .Rprofile
+      - Rscript -e 'install.packages(c("remotes"));if (!all(c("remotes") %in% installed.packages())) { q(status = 1, save = "no")}'
+      - "Rscript -e 'deps <- remotes::dev_package_deps(dependencies = NA);remotes::install_deps(dependencies = TRUE);if (!all(deps$package %in% installed.packages())) { message(\"missing: \", paste(setdiff(deps$package, installed.packages()), collapse=\", \")); q(status = 1, save = \"no\")}'"
 addons:
   apt:
     packages:
@@ -19,9 +38,11 @@ cache:
 - ccache
 - packages
 before_install:
-- mkdir $HOME/.R && echo -e 'CXX_STD = CXX14\n\nVER=\nCCACHE=ccache\nCC=$(CCACHE)
-  gcc$(VER) -std=gnu99\nCXX=$(CCACHE) g++$(VER)\nC11=$(CCACHE) g++$(VER)\nC14=$(CCACHE)
-  g++$(VER)\nFC=$(CCACHE) gfortran$(VER)\nF77=$(CCACHE) gfortran$(VER)' > $HOME/.R/Makevars
+- if [ "$TRAVIS_OS_NAME" != "windows" ]; then
+    mkdir $HOME/.R && echo -e 'CXX_STD = CXX14\n\nVER=\nCCACHE=ccache\nCC=$(CCACHE);
+    gcc$(VER) -std=gnu99\nCXX=$(CCACHE) g++$(VER)\nC11=$(CCACHE) g++$(VER)\nC14=$(CCACHE);
+    g++$(VER)\nFC=$(CCACHE) gfortran$(VER)\nF77=$(CCACHE) gfortran$(VER)' > $HOME/.R/Makevars;
+  fi
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then export PATH="$(brew --prefix llvm)/bin:$PATH";
   fi
 script:
