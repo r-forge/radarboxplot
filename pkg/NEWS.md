@@ -1,6 +1,6 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# radarBoxplot 1.0.3.9001 (2021-10-04)
+# radarBoxplot 1.0.4 (2021-10-05)
 
 * Added old info from old inst/NEWS to fledge NEWS.md
 
