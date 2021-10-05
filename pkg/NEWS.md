@@ -2,6 +2,7 @@
 
 # radarBoxplot 1.0.4 (2021-10-05)
 
+* DESCRIPTION: Fix r-forge http(s) and trailling slash
 * Added old info from old inst/NEWS to fledge NEWS.md
 
 
