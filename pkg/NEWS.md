@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# radarBoxplot 1.0.5 (2021-10-06)
+
+* README.md: fix CRAN link
+* DESCRIPTION: Fix r-forge http(s) and trailling slash
+* Added old info from old inst/NEWS to fledge NEWS.md
+
+
 # radarBoxplot 1.0.4 (2021-10-05)
 
 * DESCRIPTION: Fix r-forge http(s) and trailling slash
