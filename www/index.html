@@ -1,0 +1,315 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en   ">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>radarBoxplot Homepage</title>
+    <style type="text/css">
+        dt {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <! --- R-Forge Logo --->
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <a href="/"><img src="https://r-forge.r-project.org/themes/rforge/imagesrf/logo.png" border="0"
+                            alt="R-Forge Logo" /> </a>
+                </td>
+            </tr>
+        </table>
+
+        <div data-target="readme-toc.content" class="Box-body px-5 pb-5">
+            <article class="markdown-body entry-content container-lg" itemprop="text">
+                <h1><a id="user-content-radar-boxplot-" class="anchor" aria-hidden="true" href="#radar-boxplot-"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Radar-Boxplot <a target="_blank" rel="noopener noreferrer"
+                        href="/caiohamamura/radarBoxplot-R/blob/master/man/figures/logo.png"><img
+                            src="/caiohamamura/radarBoxplot-R/raw/master/man/figures/logo.png" align="right"
+                            style="max-width: 100%;"></a></h1>
+                <p><a href="https://CRAN.R-project.org/package=radarBoxplot" rel="nofollow"><img
+                            src="https://camo.githubusercontent.com/c36ed7b159a10df87d31f0386336b533e482aba08877b8d556e37b2eb2ff2fef/68747470733a2f2f7777772e722d706b672e6f72672f6261646765732f76657273696f6e2f7261646172426f78706c6f74"
+                            alt="CRAN" data-canonical-src="https://www.r-pkg.org/badges/version/radarBoxplot"
+                            style="max-width: 100%;"></a>
+                    <a target="_blank" rel="noopener noreferrer"
+                        href="https://camo.githubusercontent.com/90a24543bf23065c8b9b137d7266384ec00d4d1574e5391b4f21aef6dfc86f0d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769746875622d312e302e332e393030312d677265656e2e737667"><img
+                            src="https://camo.githubusercontent.com/90a24543bf23065c8b9b137d7266384ec00d4d1574e5391b4f21aef6dfc86f0d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4769746875622d312e302e332e393030312d677265656e2e737667"
+                            alt="Github" data-canonical-src="https://img.shields.io/badge/Github-1.0.3.9001-green.svg"
+                            style="max-width: 100%;"></a>
+                    <a target="_blank" rel="noopener noreferrer"
+                        href="https://camo.githubusercontent.com/45b4ffbd594af47fe09a3432f9f8e122c6518aa6352b4ce453a1a2563da2905c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d677265656e2e737667"><img
+                            src="https://camo.githubusercontent.com/45b4ffbd594af47fe09a3432f9f8e122c6518aa6352b4ce453a1a2563da2905c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d677265656e2e737667"
+                            alt="license" data-canonical-src="https://img.shields.io/badge/license-MIT-green.svg"
+                            style="max-width: 100%;"></a>
+                    <a target="_blank" rel="noopener noreferrer"
+                        href="https://camo.githubusercontent.com/2d81b6930890433b856e5f93c65949f046b4aa6517fcf1f144850d78ae1a618e/68747470733a2f2f6372616e6c6f67732e722d706b672e6f72672f6261646765732f6772616e642d746f74616c2f7261646172426f78706c6f74"><img
+                            src="https://camo.githubusercontent.com/2d81b6930890433b856e5f93c65949f046b4aa6517fcf1f144850d78ae1a618e/68747470733a2f2f6372616e6c6f67732e722d706b672e6f72672f6261646765732f6772616e642d746f74616c2f7261646172426f78706c6f74"
+                            alt="Downloads"
+                            data-canonical-src="https://cranlogs.r-pkg.org/badges/grand-total/radarBoxplot"
+                            style="max-width: 100%;"></a>
+                </p>
+                <p>This package provides the implementation of the radar-boxplot, a chart created and developed by the
+                    author.</p>
+                <h2><a id="user-content-installation" class="anchor" aria-hidden="true" href="#installation"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Installation</h2>
+                <p>The package is available in the CRAN repository.</p>
+                <div class="highlight highlight-source-r position-relative overflow-auto">
+                    <pre>install.packages(<span class="pl-s"><span class="pl-pds">"</span>radarBoxplot<span class="pl-pds">"</span></span>)</pre>
+                    <div class="zeroclipboard-container position-absolute right-0 top-0">
+                        <clipboard-copy aria-label="Copy"
+                            class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+                            data-copy-feedback="Copied!" data-tooltip-direction="w" value="install.packages(&quot;radarBoxplot&quot;)
+" tabindex="0" role="button">
+                            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                                data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+                                <path fill-rule="evenodd"
+                                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z">
+                                </path>
+                                <path fill-rule="evenodd"
+                                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                                data-view-component="true"
+                                class="octicon octicon-check js-clipboard-check-icon color-text-success d-none m-2">
+                                <path fill-rule="evenodd"
+                                    d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
+                                </path>
+                            </svg>
+                        </clipboard-copy>
+                    </div>
+                </div>
+                <h2><a id="user-content-usage" class="anchor" aria-hidden="true" href="#usage"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Usage</h2>
+                <p>There are two variants <code>Default</code> and <code>Formula</code> that accepts two different sets
+                    of arguments as input.</p>
+                <h3><a id="user-content-default" class="anchor" aria-hidden="true" href="#default"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Default</h3>
+                <ul>
+                    <li><code>x</code>: numerical data frame or matrix of quantitative variables/ordinal categorical
+                        variables.</li>
+                    <li><code>y</code>: vector of labels/factors</li>
+                </ul>
+                <h3><a id="user-content-formula" class="anchor" aria-hidden="true" href="#formula"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Formula</h3>
+                <ul>
+                    <li><code>x</code>: formula describing the relationship between the categorical target variable and
+                        the descriptive numerical variables.</li>
+                    <li><code>data</code>: the data frame which the formula refers to.</li>
+                </ul>
+                <h3><a id="user-content-additional-optional-arguments" class="anchor" aria-hidden="true"
+                        href="#additional-optional-arguments"><svg class="octicon octicon-link" viewBox="0 0 16 16"
+                            version="1.1" width="16" height="16" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Additional optional arguments</h3>
+                <ul>
+                    <li><code>IQR</code>: numeric. The factor to multiply the IQR to define the outlier threshold.
+                        Default 1.5</li>
+                    <li><code>use.ggplot2</code>: if ggplot2 is available it will use ggplot for plotting: Default FALSE
+                    </li>
+                    <li><code>mfrow</code>: mfrow argument for defining the subplots nrows and ncols: Default will
+                        calculate the minimum square</li>
+                    <li><code>oma</code>: outer margins of the subplots: Default c(5,4,0,0) + 0.1</li>
+                    <li><code>mar</code>: margins of the subplots: Default c(0,0,1,1) + 0.1</li>
+                    <li><code>innerPolygon</code>: a list of optional arguments to override Q2-Q3
+                        <code>graphics::polygon()</code> style: Default list()</li>
+                    <li><code>outerPolygon</code>: a list of optional arguments to override the outer (range)
+                        <code>graphics::polygon()</code> default style: Default list()</li>
+                    <li><code>innerBorder</code>: a list of optional arguments to override the inner border
+                        <code>graphics::lines()</code> default style: Default list()</li>
+                    <li><code>outerBorder</code>: a list of optional arguments to override the outer border
+                        <code>graphics::lines()</code> default style: Default list()</li>
+                    <li><code>medianLine</code>: a list of optional arguments to override the median line
+                        <code>graphics::lines()</code> default style: Default list()</li>
+                    <li><code>outlierPoints</code>: a list of optional arguments to override the outliers
+                        <code>graphics::points()</code> default style: Default list()</li>
+                    <li><code>nTicks</code>: number of ticks for the radar chart: Default 4</li>
+                    <li><code>ticksArgs</code>: a list of optional arguments to override radar ticks
+                        <code>graphics::lines()</code> default style: Default list()</li>
+                    <li><code>axisArgs</code>: a list of optional arguments to override radar axis
+                        <code>graphics::lines()</code> default style: Default list()</li>
+                    <li><code>labelsArgs</code>: a list of optional arguments to override labels
+                        <code>graphics::text()</code> default style: Default list()</li>
+                    <li><code>angleOffset</code>: offset for rotating the plots: Default will let the top free of axis
+                        to avoid its label overlapping the title</li>
+                </ul>
+                <h2><a id="user-content-description" class="anchor" aria-hidden="true" href="#description"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Description</h2>
+                <p>The radar-boxplot merges the concepts of both radar chart and the boxplot, allowing to compare
+                    multivariate data for multiple classes/clusters at the same time. It provides an intuitive
+                    understanding over the data by creating radar polygons which can be compared in terms of shape and
+                    thickness, giving a meaningful insight towards identifying high inner variation and similar
+                    classes/clusters.</p>
+                <p>By interpreting the radar-boxplot, it is possible to predict classification confusion over classes
+                    and understand why and what could be done to achieve better results.</p>
+                <h2><a id="user-content-how-it-works" class="anchor" aria-hidden="true" href="#how-it-works"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>How it works</h2>
+                <p>The plot consists of a polar plot with radius 1. The circunference is divided into <code>n</code>
+                    axes, where <code>n</code> is the number of attributes which will be represented, one for each axis.
+                    The attributes are normalized to range from 0.1-1.0 to avoid overlapping low values in the center of
+                    the plot. The normalization is done through <code>normalized = (X - min) / (max - min)</code>, then
+                    it is transformed to 0.1-1.0 range through <code>rescaled_norm = (normalized * 0.9) + 0.1</code>.
+                </p>
+                <p>The radar-boxplot draws two different colored regions representing the same a boxplot would, but for
+                    multiple attributes at once. The inner red region represents the 25-75% percentiles of each
+                    attribute, while the blue area represents the total range, excluding the outliers as defined by <a
+                        href="https://amstat.tandfonline.com/doi/abs/10.1080/00031305.1978.10479236"
+                        rel="nofollow">Tukey (1977)</a>. Outliers appears as points, just like the classic boxplot and
+                    are defined with the formulas:</p>
+                <p align="center">
+                    IQR = Q3 - Q1
+                    <br>
+                    LOWER_OUTLIER = Q1 - (1.5 x IQR)
+                    <br>
+                    UPPER_OUTLIER = Q3 + (1.5 x IQR)
+                </p>
+                <p>The following shows an example of the radar-boxplot over the Wine Quality Dataset <a
+                        href="https://archive.ics.uci.edu/ml/datasets/wine+quality" rel="nofollow">(Cortez et al.,
+                        2009)</a>.</p>
+                <p><a target="_blank" rel="noopener noreferrer"
+                        href="/caiohamamura/radarBoxplot-R/blob/master/man/figures/Example.png"><img
+                            src="/caiohamamura/radarBoxplot-R/raw/master/man/figures/Example.png"
+                            alt="Radar-boxplot example with red wine quality dataset" style="max-width: 100%;"></a></p>
+                <p>As the rating gets higher there are two different things happening. First, there is a shift on the
+                    overall shape, mainly getting a more defined "pointy" shape towards citric acid and alcohol, while
+                    concave for volatile acidity. The second interesting fact is that the inner variation appears to
+                    reduce, suggesting that top quality wines must conform to a stricter set of parameters, while
+                    intermediante ones can have a mixture of poor properties along with high quality ones compensating
+                    each other. I could also propose a cluster analysis within ratings 5 and 6 (because of the high
+                    inner variation) to try to understand if there are multiple patterns within them, which could reveal
+                    different sets of intermediate wines.</p>
+                <p>The radar-boxplot is best suited for when there are more than 4 relevant variables for your
+                    clustering/classification task, because it gives the possibility to represent higher dimensionality
+                    while still being readable.</p>
+                <h2><a id="user-content-example" class="anchor" aria-hidden="true" href="#example"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Example</h2>
+                <div class="highlight highlight-source-r position-relative overflow-auto">
+                    <pre>library(<span class="pl-smi">radarBoxplot</span>)
+data(<span class="pl-s"><span class="pl-pds">"</span>winequality_red<span class="pl-pds">"</span></span>)
+
+<span class="pl-c"><span class="pl-c">#</span> Regular</span>
+radarBoxplot(<span class="pl-smi">quality</span> <span class="pl-k">~</span> <span class="pl-smi">.</span>, <span class="pl-smi">winequality_red</span>)
+
+<span class="pl-c"><span class="pl-c">#</span> Orange and green pattern with white median</span>
+<span class="pl-v">orange</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>#FFA500CC<span class="pl-pds">"</span></span>
+<span class="pl-v">green</span> <span class="pl-k">=</span> rgb(<span class="pl-c1">0</span>, <span class="pl-smi">.7</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0.6</span>)
+radarBoxplot(<span class="pl-smi">quality</span> <span class="pl-k">~</span> <span class="pl-smi">.</span>, <span class="pl-smi">winequality_red</span>,
+       <span class="pl-v">use.ggplot2</span><span class="pl-k">=</span><span class="pl-c1">FALSE</span>, <span class="pl-v">medianLine</span><span class="pl-k">=</span><span class="pl-k">list</span>(<span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>white<span class="pl-pds">"</span></span>),
+       <span class="pl-v">innerPolygon</span><span class="pl-k">=</span><span class="pl-k">list</span>(<span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">orange</span>),
+       <span class="pl-v">outerPolygon</span><span class="pl-k">=</span><span class="pl-k">list</span>(<span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-smi">green</span>))
+
+
+<span class="pl-c"><span class="pl-c">#</span> Plot in 2 rows and 3 columns</span>
+<span class="pl-c"><span class="pl-c">#</span> change columns order (clockwise)</span>
+radarBoxplot(<span class="pl-smi">quality</span> <span class="pl-k">~</span> <span class="pl-smi">volatile.acidity</span> <span class="pl-k">+</span> <span class="pl-smi">citric.acid</span> <span class="pl-k">+</span>
+       <span class="pl-smi">residual.sugar</span> <span class="pl-k">+</span> <span class="pl-smi">fixed.acidity</span> <span class="pl-k">+</span> <span class="pl-smi">chlorides</span> <span class="pl-k">+</span>
+       <span class="pl-smi">free.sulfur.dioxide</span> <span class="pl-k">+</span> <span class="pl-smi">total.sulfur.dioxide</span> <span class="pl-k">+</span>
+       <span class="pl-smi">density</span> <span class="pl-k">+</span> <span class="pl-smi">pH</span> <span class="pl-k">+</span> <span class="pl-smi">sulphates</span> <span class="pl-k">+</span> <span class="pl-smi">alcohol</span>,
+       <span class="pl-v">data</span> <span class="pl-k">=</span> <span class="pl-smi">winequality_red</span>,
+       <span class="pl-v">mfrow</span><span class="pl-k">=</span>c(<span class="pl-c1">2</span>,<span class="pl-c1">3</span>))</pre>
+                    <div class="zeroclipboard-container position-absolute right-0 top-0">
+                        <clipboard-copy aria-label="Copy"
+                            class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay"
+                            data-copy-feedback="Copied!" data-tooltip-direction="w" value="library(radarBoxplot)
+data(&quot;winequality_red&quot;)
+
+# Regular
+radarBoxplot(quality ~ ., winequality_red)
+
+# Orange and green pattern with white median
+orange = &quot;#FFA500CC&quot;
+green = rgb(0, .7, 0, 0.6)
+radarBoxplot(quality ~ ., winequality_red,
+       use.ggplot2=FALSE, medianLine=list(col=&quot;white&quot;),
+       innerPolygon=list(col=orange),
+       outerPolygon=list(col=green))
+
+
+# Plot in 2 rows and 3 columns
+# change columns order (clockwise)
+radarBoxplot(quality ~ volatile.acidity + citric.acid +
+       residual.sugar + fixed.acidity + chlorides +
+       free.sulfur.dioxide + total.sulfur.dioxide +
+       density + pH + sulphates + alcohol,
+       data = winequality_red,
+       mfrow=c(2,3))
+" tabindex="0" role="button">
+                            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                                data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon m-2">
+                                <path fill-rule="evenodd"
+                                    d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z">
+                                </path>
+                                <path fill-rule="evenodd"
+                                    d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                                data-view-component="true"
+                                class="octicon octicon-check js-clipboard-check-icon color-text-success d-none m-2">
+                                <path fill-rule="evenodd"
+                                    d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z">
+                                </path>
+                            </svg>
+                        </clipboard-copy>
+                    </div>
+                </div>
+                <h2><a id="user-content-acknowledgments" class="anchor" aria-hidden="true" href="#acknowledgments"><svg
+                            class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                            </path>
+                        </svg></a>Acknowledgments</h2>
+                <p>Thanks Dr. Michael Friendly for your great suggestions for improving this package, I'm still working
+                    on those. Also, I'd like to thank Dr. Peter Rousseeuw for his valuable feedback.</p>
+            </article>
+        </div>
+</body>
+
+</html>
